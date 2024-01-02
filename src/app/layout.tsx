@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import TopMenu from '@/components/top-menu/top-menu'
 
 export const metadata: Metadata = {
   title: 'Software Chronicles',
@@ -16,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <TopMenu />
+        {children}
+      </body>
     </html>
   )
 }

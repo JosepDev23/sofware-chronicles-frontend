@@ -1,0 +1,12 @@
+.custom_button {
+  height: 100%;
+  border: none;
+  background-color: var(--color-accent);
+  border-radius: 2rem;
+}
+
+.custom_label {
+  color: var(--color-background);
+  font-size: large;
+  margin: 1rem;
+}

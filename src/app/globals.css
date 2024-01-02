@@ -1,0 +1,12 @@
+@import '../constants/variables.css';
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: var(--color-background);
+}
+
+h1 {
+  color: var(--color-accent);
+}
