@@ -1,13 +1,13 @@
+import ENV from '@/constants/environment'
+import LoggedUser from '@/models/logged-user'
 import RegisterDto from '@/models/register.dto'
-import User from '@/models/user'
 import axios, { AxiosResponse } from 'axios'
 
 export default async function register(
   registerDto: RegisterDto
-): Promise<User> {
-  const url =
-    process.env.BASE_URL! + process.env.USER_BASE! + process.env.USER_REGISTER!
+): Promise<LoggedUser> {
+  const url = ENV.user.register
 
-  const response: AxiosResponse<User> = await axios.post(url, registerDto)
+  const response: AxiosResponse<LoggedUser> = await axios.post(url, registerDto)
   return response.data
 }

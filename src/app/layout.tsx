@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import TopMenu from '@/components/top-menu/top-menu'
 import AuthContextProvider from '@/hooks/ AuthContext'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Software Chronicles',
