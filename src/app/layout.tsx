@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import TopMenu from '@/components/top-menu/top-menu'
+import AuthContextProvider from '@/hooks/ AuthContext'
 
 export const metadata: Metadata = {
   title: 'Software Chronicles',
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TopMenu />
-        {children}
+        <AuthContextProvider>
+          <TopMenu />
+          {children}
+        </AuthContextProvider>
       </body>
     </html>
   )
