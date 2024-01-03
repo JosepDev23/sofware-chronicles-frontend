@@ -5,6 +5,14 @@
   border-radius: 2rem;
 }
 
+.custom_button:hover {
+  background-color: var(--color-primary);
+}
+
+.custom_button:active {
+  background-color: var(--color-secondary);
+}
+
 .custom_label {
   color: var(--color-background);
   font-size: large;
