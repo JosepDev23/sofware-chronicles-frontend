@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import TopMenu from '@/components/top-menu/top-menu'
-import AuthContextProvider from '@/hooks/ AuthContext'
+import AuthContextProvider from '@/hooks/AuthContext'
 import './globals.css'
 
 export const metadata: Metadata = {
