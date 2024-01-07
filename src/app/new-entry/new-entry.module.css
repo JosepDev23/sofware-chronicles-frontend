@@ -1,0 +1,19 @@
+.new_entry_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.card_box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button_box {
+  margin-top: 2rem;
+  height: 3rem;
+}

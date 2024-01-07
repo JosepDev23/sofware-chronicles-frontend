@@ -20,13 +20,20 @@ const TopMenu: React.FC = () => {
     navigator.replace('/log-in')
   }
 
+  function handleNewEntry() {
+    navigator.replace('/new-entry')
+  }
+
   return (
     <header className={style.header_wrapper}>
       <Link href="/">
         <h1 className={style.app_title}>{APPLICATION_TITLE}</h1>
       </Link>
       {loggedUser ? (
-        <h2>Welcome back {loggedUser.user.username}</h2>
+        <>
+          <CustomButton label="New Entry" onClick={handleNewEntry} />
+          <h2>Welcome back {loggedUser.user.username}</h2>
+        </>
       ) : (
         <div className={style.buttons_wrapper}>
           <CustomButton label="Sign In" onClick={handleClickSignIn} />
