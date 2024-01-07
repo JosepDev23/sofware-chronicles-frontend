@@ -6,6 +6,7 @@
 }
 
 .app_title {
+  align-self: center;
   margin: 0;
 }
 
@@ -13,4 +14,14 @@
   width: 13rem;
   display: flex;
   justify-content: space-between;
+}
+
+.logged_buttons_wrapper {
+  width: 30rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.new_entry_button_box {
+  margin-right: 1rem;
 }

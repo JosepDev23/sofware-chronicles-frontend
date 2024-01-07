@@ -30,10 +30,14 @@ const TopMenu: React.FC = () => {
         <h1 className={style.app_title}>{APPLICATION_TITLE}</h1>
       </Link>
       {loggedUser ? (
-        <>
-          <CustomButton label="New Entry" onClick={handleNewEntry} />
-          <h2>Welcome back {loggedUser.user.username}</h2>
-        </>
+        <div className={style.logged_buttons_wrapper}>
+          <div className={style.new_entry_button_box}>
+            <CustomButton label="New Entry" onClick={handleNewEntry} />
+          </div>
+          <h2 className={style.app_title}>
+            Welcome back {loggedUser.user.username}
+          </h2>
+        </div>
       ) : (
         <div className={style.buttons_wrapper}>
           <CustomButton label="Sign In" onClick={handleClickSignIn} />
