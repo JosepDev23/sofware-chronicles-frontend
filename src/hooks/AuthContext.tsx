@@ -1,7 +1,7 @@
 'use client'
 import LoggedUser from '@/models/logged-user'
 import User from '@/models/user'
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 interface AuthContextData {
   loggedUser: LoggedUser | undefined
@@ -12,6 +12,18 @@ export const AuthContext = createContext<AuthContextData>({} as AuthContextData)
 
 export default function AuthContextProvider({ children }: any) {
   const [loggedUser, setLoggedUser] = useState<LoggedUser>()
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    const user = localStorage.getItem('user')
+
+    if (token && user) {
+      setLoggedUser({
+        user: JSON.parse(user),
+        token: token,
+      })
+    }
+  }, [])
 
   return (
     <AuthContext.Provider value={{ loggedUser, setLoggedUser }}>
