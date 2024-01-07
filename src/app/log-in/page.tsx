@@ -15,6 +15,8 @@ const LogIn: React.FC = () => {
 
   async function handleClickConfirm() {
     const newLoggedUser = await UserService.login({ phoneNumber, password })
+    localStorage.setItem('token', newLoggedUser.token)
+    localStorage.setItem('user', JSON.stringify(newLoggedUser.user))
     setLoggedUser(newLoggedUser)
     navigator.replace('/')
   }
