@@ -1,6 +1,5 @@
 'use client'
 import LoggedUser from '@/models/logged-user'
-import User from '@/models/user'
 import React, { createContext, useEffect, useState } from 'react'
 
 interface AuthContextData {
