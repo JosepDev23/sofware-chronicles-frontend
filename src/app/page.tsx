@@ -29,19 +29,14 @@ export default function Home() {
   return (
     <div className={style.home_wrapper}>
       {loggedUser ? (
-        entries.map((entry) => <EntryCard entry={entry} />)
+        entries.map((entry) => (
+          <div className={style.card_box}>
+            <EntryCard entry={entry} />
+          </div>
+        ))
       ) : (
         <h1>Log in to see your entries</h1>
       )}
-      <EntryCard
-        entry={{
-          _id: '1',
-          userId: '1',
-          date: new Date(),
-          body: 'cumlord was here',
-        }}
-      />
-      <p>{loggedUser?.token}</p>
     </div>
   )
 }

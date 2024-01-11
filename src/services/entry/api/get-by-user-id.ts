@@ -14,5 +14,7 @@ export default async function getByUserId(
     },
   })
 
-  return response.data
+  return response.data.map((entry) => {
+    return { ...entry, date: new Date(entry.date.toString()) }
+  })
 }
