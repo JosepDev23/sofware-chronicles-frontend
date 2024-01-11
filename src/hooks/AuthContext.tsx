@@ -16,6 +16,8 @@ export default function AuthContextProvider({ children }: any) {
     const token = localStorage.getItem('token')
     const user = localStorage.getItem('user')
 
+    console.log('jacinto context', user)
+
     if (token && user) {
       setLoggedUser({
         user: JSON.parse(user),
