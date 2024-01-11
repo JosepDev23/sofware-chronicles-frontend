@@ -12,20 +12,6 @@ export const AuthContext = createContext<AuthContextData>({} as AuthContextData)
 export default function AuthContextProvider({ children }: any) {
   const [loggedUser, setLoggedUser] = useState<LoggedUser>()
 
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    const user = localStorage.getItem('user')
-
-    console.log('jacinto context', user)
-
-    if (token && user) {
-      setLoggedUser({
-        user: JSON.parse(user),
-        token: token,
-      })
-    }
-  }, [])
-
   return (
     <AuthContext.Provider value={{ loggedUser, setLoggedUser }}>
       {children}

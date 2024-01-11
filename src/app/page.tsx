@@ -13,10 +13,9 @@ export default function Home() {
 
   useEffect(() => {
     handleSetEntries()
-  }, [])
+  }, [loggedUser])
 
   async function handleSetEntries() {
-    console.log('jacinto component', loggedUser)
     if (loggedUser) {
       const retrievedEntries = await EntryService.getByUserId(
         loggedUser.user._id,
