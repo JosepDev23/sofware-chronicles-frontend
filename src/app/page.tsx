@@ -3,40 +3,29 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import style from './page.module.css'
 import EntryCard from '@/components/entry-card/entry-card'
-import { AuthContext } from '@/hooks/AuthContext'
 import Entry from '@/models/entry'
 import EntryService from '@/services/entry/entry-service'
 
 export default function Home() {
-  const { loggedUser } = useContext(AuthContext)
-  const [entries, setEntries] = useState<Entry[]>([])
+  const [lastestEntries, setLastestEntries] = useState<Entry[]>([])
 
   useEffect(() => {
-    handleSetEntries()
-  }, [loggedUser])
+    handleSetLastestEntries()
+  }, [])
 
-  async function handleSetEntries() {
-    if (loggedUser) {
-      const retrievedEntries = await EntryService.getByUserId(
-        loggedUser.user._id,
-        loggedUser.token
-      )
+  async function handleSetLastestEntries() {
+    const retrievedEntries = await EntryService.getLastestEntries()
 
-      setEntries(retrievedEntries)
-    }
+    setLastestEntries(retrievedEntries)
   }
 
   return (
     <div className={style.home_wrapper}>
-      {loggedUser ? (
-        entries.map((entry) => (
-          <div className={style.card_box}>
-            <EntryCard entry={entry} />
-          </div>
-        ))
-      ) : (
-        <h1>Log in to see your entries</h1>
-      )}
+      {lastestEntries.map((entry) => (
+        <div className={style.card_box}>
+          <EntryCard entry={entry} />
+        </div>
+      ))}
     </div>
   )
 }
