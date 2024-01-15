@@ -5,9 +5,13 @@ import style from './top-menu.module.css'
 import CustomButton from '../custom-button/custom-button'
 import { useRouter } from 'next/navigation'
 import { AuthContext } from '@/hooks/AuthContext'
+import NavItem from './models/nav-item'
 
 const TopMenu: React.FC = () => {
   const APPLICATION_TITLE = 'Software Chronicles'
+  const NAV_ITEMS: NavItem[] = [
+    { label: 'Your chronicle', path: 'your-chronicle' },
+  ]
 
   const navigator = useRouter()
   const { loggedUser } = useContext(AuthContext)
@@ -26,9 +30,16 @@ const TopMenu: React.FC = () => {
 
   return (
     <header className={style.header_wrapper}>
-      <Link href="/">
-        <h1 className={style.app_title}>{APPLICATION_TITLE}</h1>
-      </Link>
+      <nav className={style.nav_wrapper}>
+        <Link href="/">
+          <h1 className={style.app_title}>{APPLICATION_TITLE}</h1>
+        </Link>
+        {NAV_ITEMS.map((navItem) => (
+          <Link href={navItem.path} key={navItem.label}>
+            <h2 className={style.nav_item}>{navItem.label}</h2>
+          </Link>
+        ))}
+      </nav>
       {loggedUser ? (
         <div className={style.logged_buttons_wrapper}>
           <div className={style.new_entry_button_box}>
