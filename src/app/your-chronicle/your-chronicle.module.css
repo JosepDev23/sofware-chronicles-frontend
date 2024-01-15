@@ -1,0 +1,11 @@
+.background_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.card_box {
+  margin-bottom: 1rem;
+}
