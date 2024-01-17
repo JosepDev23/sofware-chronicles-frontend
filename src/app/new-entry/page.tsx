@@ -6,8 +6,10 @@ import CustomButton from '@/components/custom-button/custom-button'
 import { AuthContext } from '@/hooks/AuthContext'
 import EntryDto from '@/models/entry.dto'
 import EntryService from '@/services/entry/entry-service'
+import { useRouter } from 'next/navigation'
 
 const NewEntry: React.FC = () => {
+  const navigator = useRouter()
   const [entryText, setEntryText] = useState<string>('')
   const { loggedUser } = useContext(AuthContext)
 
@@ -18,7 +20,9 @@ const NewEntry: React.FC = () => {
       date: new Date(),
     }
 
-    const entry = await EntryService.postEntry(newEntry, loggedUser!.token)
+    EntryService.postEntry(newEntry, loggedUser!.token).then(() => {
+      navigator.replace('/your-chronicle')
+    })
   }
 
   return (
