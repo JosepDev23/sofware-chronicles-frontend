@@ -1,5 +1,5 @@
 .entry_card_wrapper {
-  background-color: var(--color-accent);
+  background: var(--color-primary);
   border-radius: 1rem;
   padding: 1rem;
   width: 53rem;

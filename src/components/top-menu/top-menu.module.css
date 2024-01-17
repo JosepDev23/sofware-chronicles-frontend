@@ -1,5 +1,4 @@
 .header_wrapper {
-  border-bottom: solid var(--color-accent);
   padding: 1em;
   display: flex;
   justify-content: space-between;

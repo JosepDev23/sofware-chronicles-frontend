@@ -1,7 +1,11 @@
 :root {
   --color-text: #e5efee;
-  --color-background: #060b0a;
-  --color-primary: #9ccbc6;
+  --color-darker: #0f262c;
+  --color-background: linear-gradient(var(--color-darker), #668f94);
+  --color-primary: #cbeffa;
   --color-secondary: #356e69;
-  --color-accent: #66bbb3;
+  --color-accent: #669cb1;
+
+  --box-shadow-card: inset 0 0 0.3rem var(--color-darker),
+    0 0 0.9rem rgba(151, 198, 202, 0.5);
 }

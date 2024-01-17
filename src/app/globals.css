@@ -1,10 +1,10 @@
 @import '../constants/variables.css';
 
 body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
-  background-color: var(--color-background);
+  background: var(--color-background);
 }
 
 h1,
@@ -12,5 +12,6 @@ h2,
 h3,
 h4,
 h5 {
-  color: var(--color-accent);
+  color: var(--color-primary);
+  filter: drop-shadow(0 0 0.1rem var(--color-primary));
 }

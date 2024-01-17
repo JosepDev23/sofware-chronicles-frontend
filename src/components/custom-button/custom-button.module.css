@@ -1,12 +1,12 @@
 .custom_button {
   height: 100%;
   border: none;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   border-radius: 2rem;
 }
 
 .custom_button:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
 }
 
 .custom_button:active {
