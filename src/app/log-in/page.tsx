@@ -18,7 +18,7 @@ const LogIn: React.FC = () => {
     localStorage.setItem('token', newLoggedUser.token)
     localStorage.setItem('user', JSON.stringify(newLoggedUser.user))
     setLoggedUser(newLoggedUser)
-    navigator.replace('/')
+    navigator.replace('/your-chronicle')
   }
 
   return (

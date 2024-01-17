@@ -14,7 +14,7 @@ const TopMenu: React.FC = () => {
   ]
 
   const navigator = useRouter()
-  const { loggedUser } = useContext(AuthContext)
+  const { loggedUser, setLoggedUser } = useContext(AuthContext)
 
   function handleClickSignIn() {
     navigator.replace('/sign-in')
@@ -26,6 +26,13 @@ const TopMenu: React.FC = () => {
 
   function handleNewEntry() {
     navigator.replace('/new-entry')
+  }
+
+  function handleLogOut() {
+    localStorage.removeItem('user')
+    localStorage.removeItem('token')
+    setLoggedUser(undefined)
+    navigator.replace('/')
   }
 
   return (
@@ -48,6 +55,9 @@ const TopMenu: React.FC = () => {
           <h2 className={style.app_title}>
             Welcome back {loggedUser.user.username}
           </h2>
+          <div className={style.new_entry_button_box}>
+            <CustomButton label="Log Out" onClick={handleLogOut} />
+          </div>
         </div>
       ) : (
         <div className={style.buttons_wrapper}>
