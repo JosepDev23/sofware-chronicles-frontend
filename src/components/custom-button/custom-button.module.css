@@ -2,6 +2,8 @@
   height: 100%;
   border: none;
   background-color: var(--color-primary);
+  box-shadow: var(--box-shadow-card);
+  border: solid 0.03rem var(--color-darker);
   border-radius: 2rem;
 }
 
@@ -14,7 +16,6 @@
 }
 
 .custom_label {
-  color: var(--color-background);
   font-size: large;
   margin: 1rem;
 }

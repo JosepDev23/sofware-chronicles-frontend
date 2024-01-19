@@ -1,10 +1,11 @@
 :root {
-  --color-text: #e5efee;
-  --color-darker: #0f262c;
-  --color-background: linear-gradient(var(--color-darker), #668f94);
+  --color-text: #074e47;
+  --color-darker: #021b22;
+  --color-background: linear-gradient(var(--color-darker), #265257, #59969e);
   --color-primary: #cbeffa;
   --color-secondary: #356e69;
   --color-accent: #669cb1;
+  --color-gray: #1e1e1e;
 
   --box-shadow-card: inset 0 0 0.3rem var(--color-darker),
     0 0 0.9rem rgba(151, 198, 202, 0.5);

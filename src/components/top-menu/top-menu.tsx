@@ -38,11 +38,11 @@ const TopMenu: React.FC = () => {
   return (
     <header className={style.header_wrapper}>
       <nav className={style.nav_wrapper}>
-        <Link href="/">
+        <Link className={style.link} href="/">
           <h1 className={style.app_title}>{APPLICATION_TITLE}</h1>
         </Link>
         {NAV_ITEMS.map((navItem) => (
-          <Link href={navItem.path} key={navItem.label}>
+          <Link className={style.link} href={navItem.path} key={navItem.label}>
             <h2 className={style.nav_item}>{navItem.label}</h2>
           </Link>
         ))}

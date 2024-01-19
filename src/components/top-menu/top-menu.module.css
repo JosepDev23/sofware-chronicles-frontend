@@ -33,3 +33,7 @@
 .new_entry_button_box {
   margin-right: 1rem;
 }
+
+.link {
+  text-decoration: none;
+}

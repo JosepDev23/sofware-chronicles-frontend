@@ -9,9 +9,12 @@ interface EntryCardProps {
 const EntryCard: React.FC<EntryCardProps> = (props) => {
   return (
     <article className={style.entry_card_wrapper}>
-      <label>{`${props.entry.date.toLocaleString()}`}</label>
-      <div className={style.divider} />
-      <label>{props.entry.body}</label>
+      <div className={style.header_wrapper}>
+        <label>{`${props.entry.date.toLocaleString()}`}</label>
+      </div>
+      <div className={style.body_wrapper}>
+        <label>{props.entry.body}</label>
+      </div>
     </article>
   )
 }

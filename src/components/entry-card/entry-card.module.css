@@ -1,14 +1,22 @@
 .entry_card_wrapper {
   background: var(--color-primary);
+  box-shadow: var(--box-shadow-card);
+  border: solid 0.03rem var(--color-darker);
   border-radius: 1rem;
   padding: 1rem;
   width: 53rem;
   max-width: 90%;
 }
 
-.divider {
-  width: 100%;
-  height: 1px;
-  margin: 0.1rem 0 0.7rem 0;
-  background-color: black;
+.header_wrapper {
+  padding: 0.7rem;
+  margin: 0 0 0.7rem 0;
+  border-radius: 0.8rem;
+  border-top: solid var(--color-text);
+  border-left: solid var(--color-text);
+  border-right: solid var(--color-text);
+}
+
+.body_wrapper {
+  padding: 1.3rem;
 }
