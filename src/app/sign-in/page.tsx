@@ -5,6 +5,7 @@ import CustomInput from '@/components/custom-input/custom-input'
 import CustomButton from '@/components/custom-button/custom-button'
 import UserService from '@/services/user/user-service'
 import { useRouter } from 'next/navigation'
+import CustomInputPhone from '@/components/custom-phone-input/custom-phone-input'
 
 const SignIn: React.FC = () => {
   const navigator = useRouter()
@@ -27,12 +28,7 @@ const SignIn: React.FC = () => {
       <h2>Welcome!</h2>
       <div className={style.input_box}>
         <label className={style.input_label}>Phone number</label>
-        <CustomInput
-          value={phoneNumber}
-          onChange={(e) => {
-            setPhoneNumber(e.target.value)
-          }}
-        />
+        <CustomInputPhone value={phoneNumber} onChange={setPhoneNumber} />
       </div>
       <div className={style.input_box}>
         <label className={style.input_label}>Username</label>

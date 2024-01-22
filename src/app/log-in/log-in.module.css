@@ -9,12 +9,14 @@
 
 .input_label {
   color: var(--color-primary);
+  margin-bottom: 0.17rem;
 }
 
 .input_box {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  width: 17rem;
 }
 
 .button_box {
