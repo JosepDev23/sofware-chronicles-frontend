@@ -1,5 +1,5 @@
 .signin_wrapper {
-  height: 100%;
+  padding: 11rem 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 .input_label {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .input_box {

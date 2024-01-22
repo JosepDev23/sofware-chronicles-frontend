@@ -1,7 +1,8 @@
 .input_wrapper {
-  background-color: var(--color-accent);
-  border: none;
+  background-color: var(--color-primary);
+  box-shadow: var(--box-shadow-card);
+  border: solid 0.03rem var(--color-darker);
   height: 2rem;
   border-radius: 0.3rem;
-  color: var(--color-background);
+  color: var(--color-darker);
 }
