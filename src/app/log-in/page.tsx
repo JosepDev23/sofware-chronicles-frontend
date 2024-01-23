@@ -7,6 +7,7 @@ import CustomButton from '@/components/custom-button/custom-button'
 import UserService from '@/services/user/user-service'
 import { useRouter } from 'next/navigation'
 import CustomInputPhone from '@/components/custom-phone-input/custom-phone-input'
+import ValidatorService from '@/services/validator/validator-service'
 
 const LogIn: React.FC = () => {
   const navigator = useRouter()
@@ -15,11 +16,16 @@ const LogIn: React.FC = () => {
   const { loggedUser, setLoggedUser } = useContext(AuthContext)
 
   async function handleClickConfirm() {
-    const newLoggedUser = await UserService.login({ phoneNumber, password })
-    localStorage.setItem('token', newLoggedUser.token)
-    localStorage.setItem('user', JSON.stringify(newLoggedUser.user))
-    setLoggedUser(newLoggedUser)
-    navigator.replace('/your-chronicle')
+    if (
+      ValidatorService.validatePhoneNumber(phoneNumber) &&
+      ValidatorService.validatePassword(password)
+    ) {
+      const newLoggedUser = await UserService.login({ phoneNumber, password })
+      localStorage.setItem('token', newLoggedUser.token)
+      localStorage.setItem('user', JSON.stringify(newLoggedUser.user))
+      setLoggedUser(newLoggedUser)
+      navigator.replace('/your-chronicle')
+    }
   }
 
   return (

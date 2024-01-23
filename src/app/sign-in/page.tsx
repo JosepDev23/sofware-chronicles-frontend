@@ -6,6 +6,7 @@ import CustomButton from '@/components/custom-button/custom-button'
 import UserService from '@/services/user/user-service'
 import { useRouter } from 'next/navigation'
 import CustomInputPhone from '@/components/custom-phone-input/custom-phone-input'
+import ValidatorService from '@/services/validator/validator-service'
 
 const SignIn: React.FC = () => {
   const navigator = useRouter()
@@ -15,12 +16,18 @@ const SignIn: React.FC = () => {
   const [passwordConfirm, setPasswordConfirm] = useState<string>('')
 
   async function handleClickConfirm() {
-    const registeredUser = await UserService.register({
-      phoneNumber,
-      username,
-      password,
-    })
-    navigator.replace('/')
+    if (
+      ValidatorService.validatePhoneNumber(phoneNumber) &&
+      password === passwordConfirm &&
+      ValidatorService.validatePassword(password)
+    ) {
+      const registeredUser = await UserService.register({
+        phoneNumber,
+        username,
+        password,
+      })
+      navigator.replace('/')
+    }
   }
 
   return (
