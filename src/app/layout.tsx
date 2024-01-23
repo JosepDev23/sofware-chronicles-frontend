@@ -20,7 +20,7 @@ export default function RootLayout({
         <AuthContextProvider>
           <LocalStorageWrapper>
             <TopMenu />
-            {children}
+            <main>{children}</main>
           </LocalStorageWrapper>
         </AuthContextProvider>
       </body>

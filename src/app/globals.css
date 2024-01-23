@@ -7,6 +7,12 @@ body {
   background: var(--color-background);
 }
 
+main {
+  height: calc(100vh - 5.3rem);
+  overflow-y: scroll;
+  padding-top: 1rem;
+}
+
 h1,
 h2,
 h3,
@@ -22,4 +28,20 @@ label {
   filter: drop-shadow(0 0 0.02rem var(--color-text));
   font-family: 'Monserrat', sans-serif;
   font-size: 0.9rem;
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.3rem var(--color-primary);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  box-shadow: var(--box-shadow-card);
+  border: solid 0.03rem var(--color-darker);
+  border-radius: 1rem;
 }

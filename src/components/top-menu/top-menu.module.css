@@ -2,6 +2,7 @@
   padding: 1em;
   display: flex;
   justify-content: space-between;
+  height: 2.3rem;
 }
 
 .nav_wrapper {
