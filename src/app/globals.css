@@ -19,6 +19,7 @@ h5 {
 
 label {
   color: var(--color-text);
+  filter: drop-shadow(0 0 0.02rem var(--color-text));
   font-family: 'Monserrat', sans-serif;
   font-size: 0.9rem;
 }
