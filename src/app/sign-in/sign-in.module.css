@@ -15,6 +15,7 @@
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  width: 17rem;
 }
 
 .button_box {
