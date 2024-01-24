@@ -1,8 +1,8 @@
 :root {
   --color-text: #074e47;
-  --color-darker: #021b22;
-  --color-background: linear-gradient(var(--color-darker), #265257, #59969e);
-  --color-primary: #cbeffa;
+  --color-darker: #021822;
+  --color-background: linear-gradient(var(--color-darker), #33586d, #82b6d4);
+  --color-primary: #e7f2ff;
   --color-secondary: #356e69;
   --color-accent: #57dad3;
   --color-gray: #1e1e1e;
