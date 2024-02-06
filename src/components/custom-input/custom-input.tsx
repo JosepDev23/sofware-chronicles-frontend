@@ -3,7 +3,8 @@ import style from './custom-input.module.css'
 
 interface CustomInputProps {
   value: string
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: React.ChangeEventHandler<HTMLInputElement>
+  onBlur: React.FocusEventHandler<HTMLInputElement>
 }
 
 const CustomInput: React.FC<CustomInputProps> = (props) => {
@@ -12,6 +13,7 @@ const CustomInput: React.FC<CustomInputProps> = (props) => {
       className={style.input_wrapper}
       value={props.value}
       onChange={props.onChange}
+      onBlur={props.onBlur}
     />
   )
 }

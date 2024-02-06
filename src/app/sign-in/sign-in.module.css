@@ -18,6 +18,20 @@
   width: 17rem;
 }
 
+.input_inner_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.input_inner_wrapper i {
+  margin-left: 0.3rem;
+  color: var(--color-error);
+}
+
+.input_inner_wrapper input {
+  width: 100%;
+}
+
 .button_box {
   height: 3rem;
 }

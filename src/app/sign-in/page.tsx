@@ -14,6 +14,12 @@ const SignIn: React.FC = () => {
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [passwordConfirm, setPasswordConfirm] = useState<string>('')
+  const [isInvalidPhoneNumber, setIsInvalidPhoneNumber] =
+    useState<boolean>(false)
+  const [isInvalidUsername, setIsInvalidUsername] = useState<boolean>(false)
+  const [isInvalidPassword, setIsInvalidPassword] = useState<boolean>(false)
+  const [isInvalidPasswordConfirm, setIsInvalidPasswordConfirm] =
+    useState<boolean>(false)
 
   async function handleClickConfirm() {
     if (
@@ -35,34 +41,71 @@ const SignIn: React.FC = () => {
       <h2>Welcome!</h2>
       <div className={style.input_box}>
         <label className={style.input_label}>Phone number</label>
-        <CustomInputPhone value={phoneNumber} onChange={setPhoneNumber} />
+        <div className={style.input_inner_wrapper}>
+          <CustomInputPhone
+            value={phoneNumber}
+            onChange={setPhoneNumber}
+            onBlur={(e) => {
+              setIsInvalidPhoneNumber(
+                !ValidatorService.validatePhoneNumber(phoneNumber)
+              )
+            }}
+          />
+          {isInvalidPhoneNumber && <i className="material-icons">warning</i>}
+        </div>
       </div>
       <div className={style.input_box}>
         <label className={style.input_label}>Username</label>
-        <CustomInput
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value)
-          }}
-        />
+        <div className={style.input_inner_wrapper}>
+          <CustomInput
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value)
+            }}
+            onBlur={(e) => {
+              setIsInvalidUsername(
+                !ValidatorService.validateUsername(e.target.value)
+              )
+            }}
+          />
+          {isInvalidUsername && <i className="material-icons">warning</i>}
+        </div>
       </div>
       <div className={style.input_box}>
         <label className={style.input_label}>Password</label>
-        <CustomInput
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value)
-          }}
-        />
+        <div className={style.input_inner_wrapper}>
+          <CustomInput
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}
+            onBlur={(e) => {
+              setIsInvalidPassword(
+                !ValidatorService.validatePassword(e.target.value)
+              )
+            }}
+          />
+          {isInvalidPassword && <i className="material-icons">warning</i>}
+        </div>
       </div>
       <div className={style.input_box}>
         <label className={style.input_label}>Confirm password</label>
-        <CustomInput
-          value={passwordConfirm}
-          onChange={(e) => {
-            setPasswordConfirm(e.target.value)
-          }}
-        />
+        <div className={style.input_inner_wrapper}>
+          <CustomInput
+            value={passwordConfirm}
+            onChange={(e) => {
+              setPasswordConfirm(e.target.value)
+            }}
+            onBlur={(e) => {
+              setIsInvalidPasswordConfirm(
+                !ValidatorService.validatePassword(e.target.value)
+              )
+            }}
+          />
+          {isInvalidPasswordConfirm && (
+            <i className="material-icons">warning</i>
+          )}
+        </div>
       </div>
       <div className={style.button_box}>
         <CustomButton label="Confirm" onClick={handleClickConfirm} />

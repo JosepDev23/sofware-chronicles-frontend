@@ -25,6 +25,8 @@
   /* This is done to stretch the contents of this component. */
   display: flex;
   align-items: center;
+  /* Jacinto custom styles */
+  width: 100%;
 }
 
 .PhoneInputInput {
@@ -34,6 +36,7 @@
 	   to make room for the extension input */
   min-width: 0;
   /* Jacinto custom styles */
+  width: 100%;
   height: 2rem;
   background-color: var(--color-primary);
   box-shadow: var(--box-shadow-card);

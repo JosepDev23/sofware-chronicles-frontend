@@ -7,6 +7,7 @@
   --color-secondary: #8f9eb3;
   --color-accent: #b3c4db;
   --color-gray: #1e1e1e;
+  --color-error: #cf4646;
 
   --box-shadow-card: inset 0 0 0.3rem var(--color-darker),
     0 0 0.9rem rgba(151, 198, 202, 0.5);

@@ -13,6 +13,10 @@ const LogIn: React.FC = () => {
   const navigator = useRouter()
   const [phoneNumber, setPhoneNumber] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+  const [isInvalidPhoneNumber, setIsInvalidPhoneNumber] =
+    useState<boolean>(false)
+  const [isInvalidPassword, setIsInvalidPassword] = useState<boolean>(false)
+
   const { loggedUser, setLoggedUser } = useContext(AuthContext)
 
   async function handleClickConfirm() {
@@ -33,16 +37,35 @@ const LogIn: React.FC = () => {
       <h2>Welcome!</h2>
       <div className={style.input_box}>
         <label className={style.input_label}>Phone number</label>
-        <CustomInputPhone value={phoneNumber} onChange={setPhoneNumber} />
+        <div className={style.input_inner_wrapper}>
+          <CustomInputPhone
+            value={phoneNumber}
+            onChange={setPhoneNumber}
+            onBlur={(e) => {
+              setIsInvalidPhoneNumber(
+                !ValidatorService.validatePhoneNumber(phoneNumber)
+              )
+            }}
+          />
+          {isInvalidPhoneNumber && <i className="material-icons">warning</i>}
+        </div>
       </div>
       <div className={style.input_box}>
         <label className={style.input_label}>Password</label>
-        <CustomInput
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value)
-          }}
-        />
+        <div className={style.input_inner_wrapper}>
+          <CustomInput
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}
+            onBlur={(e) => {
+              setIsInvalidPassword(
+                !ValidatorService.validatePassword(e.target.value)
+              )
+            }}
+          />
+          {isInvalidPassword && <i className="material-icons">warning</i>}
+        </div>
       </div>
       <div className={style.button_box}>
         <CustomButton label="LogIn" onClick={handleClickConfirm} />

@@ -5,6 +5,7 @@ import './styles.css'
 interface CustomInputPhoneProps {
   value: string
   onChange: (value: string) => void
+  onBlur: (event: React.FocusEvent<HTMLElement, Element>) => void
 }
 
 const CustomInputPhone: React.FC<CustomInputPhoneProps> = (props) => {
@@ -14,6 +15,7 @@ const CustomInputPhone: React.FC<CustomInputPhoneProps> = (props) => {
       onChange={(e) => {
         props.onChange(e?.toString()!)
       }}
+      onBlur={props.onBlur}
     />
   )
 }
