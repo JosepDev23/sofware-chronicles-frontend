@@ -4,8 +4,8 @@
   --color-darker: #021822;
   --color-background: linear-gradient(var(--color-darker), #33586d, #82b6d4);
   --color-primary: #e7f2ff;
-  --color-secondary: #356e69;
-  --color-accent: #57dad3;
+  --color-secondary: #8f9eb3;
+  --color-accent: #b3c4db;
   --color-gray: #1e1e1e;
 
   --box-shadow-card: inset 0 0 0.3rem var(--color-darker),
