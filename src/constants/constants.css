@@ -1,5 +1,6 @@
 :root {
   --color-text: #074e47;
+  --color-text-body: #667e7b;
   --color-darker: #021822;
   --color-background: linear-gradient(var(--color-darker), #33586d, #82b6d4);
   --color-primary: #e7f2ff;

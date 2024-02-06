@@ -17,3 +17,8 @@
 .body_wrapper {
   padding: 1.3rem;
 }
+
+.text_body {
+  color: var(--color-text-body);
+  font-size: 0.83rem;
+}
