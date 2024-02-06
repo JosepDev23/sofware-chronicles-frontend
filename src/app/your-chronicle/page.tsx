@@ -28,7 +28,7 @@ export default function YourChronicle() {
     <div className={style.background_wrapper}>
       {loggedUser ? (
         entries.length === 0 ? (
-          <h1>Start writing enties!</h1>
+          <h1>Start writting enties!</h1>
         ) : (
           entries.map((entry) => (
             <div className={style.card_box}>
