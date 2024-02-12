@@ -75,6 +75,7 @@ const SignIn: React.FC = () => {
         <label className={style.input_label}>Password</label>
         <div className={style.input_inner_wrapper}>
           <CustomInput
+            typePassword
             value={password}
             onChange={(e) => {
               setPassword(e.target.value)
@@ -92,6 +93,7 @@ const SignIn: React.FC = () => {
         <label className={style.input_label}>Confirm password</label>
         <div className={style.input_inner_wrapper}>
           <CustomInput
+            typePassword
             value={passwordConfirm}
             onChange={(e) => {
               setPasswordConfirm(e.target.value)

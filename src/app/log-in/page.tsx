@@ -54,6 +54,7 @@ const LogIn: React.FC = () => {
         <label className={style.input_label}>Password</label>
         <div className={style.input_inner_wrapper}>
           <CustomInput
+            typePassword
             value={password}
             onChange={(e) => {
               setPassword(e.target.value)

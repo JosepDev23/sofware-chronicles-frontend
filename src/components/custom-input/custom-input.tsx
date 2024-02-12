@@ -5,6 +5,7 @@ interface CustomInputProps {
   value: string
   onChange: React.ChangeEventHandler<HTMLInputElement>
   onBlur: React.FocusEventHandler<HTMLInputElement>
+  typePassword?: boolean
 }
 
 const CustomInput: React.FC<CustomInputProps> = (props) => {
@@ -14,6 +15,7 @@ const CustomInput: React.FC<CustomInputProps> = (props) => {
       value={props.value}
       onChange={props.onChange}
       onBlur={props.onBlur}
+      type={props.typePassword ? 'password' : 'text'}
     />
   )
 }
