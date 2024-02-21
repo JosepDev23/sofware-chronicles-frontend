@@ -21,4 +21,5 @@
 .text_body {
   color: var(--color-text-body);
   font-size: 0.89rem;
+  word-wrap: break-word;
 }
