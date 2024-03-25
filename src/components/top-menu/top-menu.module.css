@@ -2,7 +2,7 @@
   padding: 1em;
   display: flex;
   justify-content: space-between;
-  height: 2.3rem;
+  height: 4.3rem;
 }
 
 .nav_wrapper {
@@ -37,4 +37,22 @@
 
 .link {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 333px) {
+  .nav_item {
+    font-size: 85%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .app_title {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  .app_title {
+    display: block;
+  }
 }

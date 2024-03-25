@@ -22,6 +22,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;700;900&display=swap"
+        />
         <AuthContextProvider>
           <LocalStorageWrapper>
             <BackgroundSVG />

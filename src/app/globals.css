@@ -1,14 +1,28 @@
 @import '../constants/constants.css';
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+}
+
 body {
   height: 100vh;
   max-width: 100vw;
   margin: 0;
   background: var(--color-background);
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
 main {
-  height: calc(100vh - 5.3rem);
+  height: calc(100vh - 4.3rem);
   overflow-y: scroll;
   padding-top: 1rem;
 }
@@ -39,4 +53,28 @@ label {
   box-shadow: var(--box-shadow-card);
   border: solid 0.03rem var(--color-darker);
   border-radius: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 77.5%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+  html {
+    font-size: 92.5%;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  html {
+    font-size: 100%;
+  }
 }
